@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "outDir": "./dist/",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": false,
+    "sourceRoot": "./src",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "allowJs": true
+  },
+  "include": ["src/**/*"]
+}
