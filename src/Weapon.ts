@@ -1,8 +1,7 @@
-import { WeaponObject } from "./interfaces";
-import ParticleGenerator from "./ParticleGenerator";
-import { WeaponOptions, Coordinates2D, Dimensions2D } from "./types";
-import { sleep } from "./utils/sleep";
-import { Howl } from "howler";
+import { Game, WeaponObject } from './interfaces';
+import ParticleGenerator from './ParticleGenerator';
+import { WeaponOptions, Coordinates2D, Dimensions2D } from './types';
+import { sleep } from './utils/sleep';
 
 export class Weapon implements WeaponObject {
   animatedParticle: boolean;
@@ -24,7 +23,12 @@ export class Weapon implements WeaponObject {
   sprites: { cursor: string; particles: string[]; staticParticles: string[] };
   viewFrame: HTMLDivElement;
 
-  constructor(game, sfx, sprites, options: WeaponOptions) {
+  constructor(
+    game: Game,
+    sfx: string[],
+    sprites: { cursor: string; particles: string[]; staticParticles: string[] },
+    options: WeaponOptions
+  ) {
     this.game = game;
     this.animatedParticle = options.animatedParticle || false;
     this.animationCount = options.animationCount || 1;
@@ -46,13 +50,13 @@ export class Weapon implements WeaponObject {
     this.particleGenerator = new ParticleGenerator(this, game);
 
     // create the sprite view frame
-    this.viewFrame = document.createElement("div");
-    this.viewFrame.id = "destroyer-weapon-sprite-view-frame";
+    this.viewFrame = document.createElement('div');
+    this.viewFrame.id = 'destroyer-weapon-sprite-view-frame';
     this.viewFrame.className = `destroyer-sprite weapon-sprite-view-frame`;
 
     // create the spritesheet renderer
-    this.spriteRenderer = document.createElement("div");
-    this.spriteRenderer.id = "destroyer-weapon-sprite-renderer";
+    this.spriteRenderer = document.createElement('div');
+    this.spriteRenderer.id = 'destroyer-weapon-sprite-renderer';
     this.spriteRenderer.className = `destroyer-sprite weapon-sprite-renderer`;
   }
 
@@ -80,7 +84,7 @@ export class Weapon implements WeaponObject {
     this.game.particleLayer.removeChild(aParticle);
 
     // replace the animated sprite with a persisted image on the canvas
-    this.game.drawingCTX.drawImage(
+    this.game.drawingCTX?.drawImage(
       sParticle,
       coords.x + this.particleOffset.x - 75,
       coords.y + this.particleOffset.y - 75

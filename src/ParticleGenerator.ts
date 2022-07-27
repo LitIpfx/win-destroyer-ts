@@ -1,20 +1,19 @@
-import Particle from "./Particle";
-import { Coordinates2D } from "./types";
-import Weapon from "./Weapon";
+import { Game } from './interfaces';
+import Particle from './Particle';
+import { Coordinates2D } from './types';
+import Weapon from './Weapon';
 
 export class ParticleGenerator {
   weapon: Weapon;
   game;
-  constructor(weapon, game) {
+  constructor(weapon: Weapon, game: Game) {
     this.weapon = weapon;
     this.game = game;
   }
 
   /** Generate and return a particle object to be rendered at the given coordinates */
   generate(coords: Coordinates2D) {
-    const particleNumber = Math.floor(
-      Math.random() * this.weapon.sprites.particles.length
-    );
+    const particleNumber = Math.floor(Math.random() * this.weapon.sprites.particles.length);
 
     const sprites = {
       animated: this.weapon.sprites.particles[particleNumber],
