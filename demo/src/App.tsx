@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import reactLogo from './assets/react.svg';
 import './App.css';
 import Destroyer from 'domain-destroyer';
 import '../../src/css/destroyer.min.css';
