@@ -19,10 +19,10 @@
   "homepage": "https://github.com/LitIpfx/win-destroyer-ts#readme",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
-    "typescript": "^4.1.3"
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "howler": "^2.2.1"
+    "howler": "^2.2.3"
   },
   "keywords": [
     "typescript",
