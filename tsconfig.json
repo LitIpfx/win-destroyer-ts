@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "ES2018",
     "outDir": "./dist/",
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": false,
     "sourceRoot": "./src",
     "sourceMap": true,
     "moduleResolution": "node",
-    "allowJs": true
+    "allowJs": true,
+    "declaration": true,
+    "esModuleInterop": false,
+    "skipLibCheck": false,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "stripInternal": true,
+    "types": [],
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"]
 }
