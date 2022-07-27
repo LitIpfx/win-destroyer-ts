@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/J-Puls/domain-destroyer.git"
+    "url": "git+https://github.com/LitIpfx/win-destroyer-ts.git"
   },
   "author": "Jeff Puls <https://jpuls.dev>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/J-Puls/domain-destroyer/issues"
+    "url": "https://github.com/LitIpfx/win-destroyer-ts/issues"
   },
-  "homepage": "https://github.com/J-Puls/domain-destroyer#readme",
+  "homepage": "https://github.com/LitIpfx/win-destroyer-ts#readme",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "typescript": "^4.1.3"
