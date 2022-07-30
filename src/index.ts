@@ -1,3 +1,5 @@
-import { Destroyer } from "./Destroyer";
+import { Destroyer } from './Destroyer';
+
 export { Destroyer };
+
 export default Destroyer;
