@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "outDir": "./dist/",
     "allowSyntheticDefaultImports": false,
+    "esModuleInterop": false,
     "sourceRoot": "./src",
     "sourceMap": true,
     "moduleResolution": "node",
     "allowJs": true,
     "declaration": true,
-    "esModuleInterop": false,
     "skipLibCheck": false,
     "strict": true,
     "noUnusedLocals": true,
@@ -16,13 +14,15 @@
     "stripInternal": true,
     "types": [],
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNEXT"
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "module": "CommonJS"
-    }
+    "module": "ESNext",
+
+    "noImplicitAny": true,
+    "outDir": "build/types",
+    "target": "es5",
+    "emitDeclarationOnly": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "lib": ["es2018", "dom"]
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "demo"]
 }
