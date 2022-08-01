@@ -1,7 +1,7 @@
 import Weapon from './Weapon';
 import weaponFactory from './weaponFactory';
 import { Howler } from 'howler';
-import { Coordinates2D, DestroyerOptions } from './types';
+import { Coordinates2D, DestroyerOptions, Sounds } from './types';
 
 export class Destroyer {
   currentWeapon: Weapon;
@@ -22,8 +22,9 @@ export class Destroyer {
   weaponFiring: boolean = false;
   weaponsList: Weapon[];
   zIndexStart: number;
-  constructor(parent: HTMLElement, options?: DestroyerOptions) {
+  constructor(parent: HTMLElement, options?: DestroyerOptions, sounds?: Sounds) {
     const opts = options || ({} as DestroyerOptions);
+    const loadedSounds = sounds || ({} as Sounds);
 
     // initiate variables
     this.isFiring = false;
@@ -43,7 +44,7 @@ export class Destroyer {
     this.parent.style.cursor = 'none';
 
     // generate weapon objects and set default
-    this.weaponsList = weaponFactory(this);
+    this.weaponsList = weaponFactory(this, loadedSounds);
     this.currentWeaponID = 0;
     this.currentWeapon = this.weaponsList[this.currentWeaponID];
     this.mousePos = { x: parent.clientWidth / 2, y: parent.clientHeight / 2 }; // initiate cursor in center of parent
