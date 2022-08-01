@@ -32,3 +32,9 @@ export type DestroyerOptions = {
   volumeChangeDelta: number;
   zIndexStart: number;
 };
+
+export type Sounds = {
+  hammer: [string, string];
+  machinegun: [string];
+  stamp: [string];
+};
